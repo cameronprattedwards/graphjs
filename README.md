@@ -10,7 +10,7 @@ A teeny tiny library for parsing raw payloads into an object graph.
 
 ### Usage
 
-GraphJS implements a [UMD pattern](https://github.com/umdjs/umd), so it works with RequireJS, CommonJS. You can also use it as a global if you don't want to use any kind of dependency injection.
+GraphJS implements a [UMD pattern](https://github.com/umdjs/umd), so it works with RequireJS and CommonJS. You can also use it as a global if you don't want to use any kind of dependency injection.
 
 We'll use globals in the examples.
 
@@ -42,7 +42,7 @@ Person.scheme = {
 };
 ```
 
-A scheme is justa  map of property names to data types. Data types are just plain ol' JavaScript constructors - in this case, String, Number, and Date. We also use a special mapping constructor called `Collection` - you get this for free with GraphJS. `Collection` tells GraphJS that you want `kids` to be an array of `Person`s. It's the equivalent of `List<Person>` in C# or Java.
+A scheme is just a  map of property names to data types. Data types are just plain ol' JavaScript constructors - in this case, String, Number, and Date. We also use a special mapping constructor called `Collection` - you get this for free with GraphJS. `Collection` tells GraphJS that you want `kids` to be an array of `Person`s. It's the equivalent of `List<Person>` in C# or Java.
 
 Then you'll need to fetch some raw data, via AJAX or whatever. Let's use this raw data as an example:
 
@@ -66,7 +66,7 @@ And bada-bing, bada-boom, you've got a tree of people. Run `console.log(parsedDa
 
 We recommend you use some kind of module loader, because debugging using non-optimized source files is a lot more fun. To use with RequireJS, just define the path to the GraphJS `src` directory, then pull in `Graph` and `Collection` whenever you need them.
 
-Assuming you installed using Bower, this is what you would do:
+Assuming you installed GraphJS using Bower, this is what you would do:
 
 ```javascript
 requirejs.config({
@@ -76,7 +76,7 @@ requirejs.config({
 })
 ```
 
-Then to use the `Graph` object:
+Then, to use the `Graph` object:
 
 ```javascript
 //main.js
@@ -88,6 +88,7 @@ require(["graphjs/Graph", "rawData", "Person"], function (Graph, rawData, Person
 To use the `Collection` object:
 
 ```javascript
+//Person.js
 define(["graphjs/Collection"], function (Collection) {
 	function Person(name, age) {
 		this.name = name;
