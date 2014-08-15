@@ -6,7 +6,7 @@ A teeny tiny library for parsing raw payloads into an object graph.
 ### Installation
 
 * Using Bower: `bower install graphjs`
-* Using NPM: `npm install graphjs`
+* Using NPM: `npm install object-graph-js`
 
 ### Usage
 
