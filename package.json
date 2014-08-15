@@ -1,0 +1,28 @@
+{
+  "name": "graphjs",
+  "version": "0.0.0",
+  "description": "A teeny tiny library for parsing raw payloads into an object graph",
+  "main": "Graph.js",
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cameronprattedwards/graphjs"
+  },
+  "keywords": [
+    "graph",
+    "parser"
+  ],
+  "author": "Cameron Edwards <cameronprattedwards@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cameronprattedwards/graphjs/issues"
+  },
+  "homepage": "https://github.com/cameronprattedwards/graphjs",
+  "devDependencies": {
+    "gulp": "~3.8.7",
+    "gulp-uglify": "~0.3.1",
+    "gulp-concat": "~2.3.4"
+  }
+}
