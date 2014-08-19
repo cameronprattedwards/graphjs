@@ -1,4 +1,4 @@
-(function () {
+(function (root, factory) {
 	if (typeof define == "function" && define.amd)
 		define(["graphjs/Graph"], factory);
 	else if (typeof exports == "object")
