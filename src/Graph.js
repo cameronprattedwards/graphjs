@@ -26,7 +26,7 @@
 			if (Entity.scheme[x].scheme) {
 				return this.parseSchemedObject(Entity.scheme[x], rawData[x]);
 			} else if (Entity.scheme[x] == Date) {
-				return this.parseData(rawData[x]);
+				return this.parseDate(rawData[x]);
 			} else {
 				return this.parseOther(Entity.scheme[x], rawData[x]);
 			}
