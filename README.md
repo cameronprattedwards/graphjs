@@ -80,7 +80,7 @@ var rawDavid = {
 This is a good example because it's deeply recursive - it's a whole family tree! Here comes the fun part: parsing this data into a graph is a piece o' cake. Just do:
 
 ```javascript
-var parsedDavid = Graph.parse(Person, david);
+var parsedDavid = Graph.parse(Person, rawDavid);
 ```
 
 And bada-bing, bada-boom, you've got a tree of people. Run `console.log(parsedDavid)` to get a good look at your tree.
