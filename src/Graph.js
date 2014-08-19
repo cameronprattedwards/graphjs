@@ -22,13 +22,13 @@
 		parseSchemedObject: function (Type, rawData) {
 			return Graph.parse(Entity, rawData);
 		},
-		parseFieldInScheme: function (Entity, rawData, x, parsedProperties) {
+		parseFieldInScheme: function (Entity, rawData, x) {
 			if (Entity.scheme[x].scheme) {
-				parsedProperties[x] = this.parseSchemedObject(Entity.scheme[x], rawData[x]);
+				return this.parseSchemedObject(Entity.scheme[x], rawData[x]);
 			} else if (Entity.scheme[x] == Date) {
-				parsedProperties[x] = this.parseData(rawData[x]);
+				return this.parseData(rawData[x]);
 			} else {
-				parsedProperties[x] = this.parseOther(Entity.scheme[x], rawData[x]);
+				return this.parseOther(Entity.scheme[x], rawData[x]);
 			}
 		},
 		makeEntity: function (Entity, rawData) {
