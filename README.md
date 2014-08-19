@@ -47,11 +47,34 @@ A scheme is just a  map of property names to data types. Data types are just pla
 Then you'll need to fetch some raw data, via AJAX or whatever. Let's use this raw data as an example:
 
 ```javascript
-var daemian = { name: "Daemian", age: 2, kids: [] };
-var genny = { name: "Genny", age: 30, kids: [daemian] };
-var ellie = { name: "Ellie", age: 2, kids: [] };
-var davejr = { name: "Dave", age: 28, kids: [ellie] };
-var david = { name: "David", age: 54, kids: [davejr, genny] };
+var rawDavid = {
+	"name": "David",
+	"age": 54,
+	"kids": [
+		{
+			"name": "Dave",
+			"age": 28,
+			"kids": [
+				{
+					"name": "Ellie",
+					"age": 2,
+					"kids": []
+				}
+			]
+		},
+		{
+			"name": "Genny",
+			"age": 30,
+			"kids": [
+				{
+					"name": "Daemian",
+					"age": 2,
+					"kids": []
+				}
+			]
+		}
+	]
+}
 ```
 
 This is a good example because it's deeply recursive - it's a whole family tree! Here comes the fun part: parsing this data into a graph is a piece o' cake. Just do:
