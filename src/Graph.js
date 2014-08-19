@@ -1,11 +1,11 @@
 (function (root, factory) {
 	if (typeof define == "function" && define.amd)
-		define(["graphjs/constructWithArgs"], factory);
+		define([], factory);
 	else if (typeof exports == "object")
-		module.exports = factory(require("graphjs/constructWithArgs"));
+		module.exports = factory();
 	else
-		root.Graph = factory(root.constructWithArgs);
-}(this, function (constructWithArgs) {
+		root.Graph = factory();
+}(this, function () {
 	var Graph = {
 		parseArray: function (Entity, rawData) {
 			var _self = this;
@@ -31,6 +31,13 @@
 				parsedProperties[x] = this.parseOther(Entity.scheme[x], rawData[x]);
 			}
 		},
+		makeEntity: function (Entity, rawData) {
+			if (Entity.context) {
+				return Entity.context.get(rawData);
+			} else {
+				return new Entity();
+			}
+		},
 		parse: function (Entity, rawData) {
 			var output,
 				parsedProperties;
@@ -50,7 +57,7 @@
 					}
 				}
 
-				output = constructWithArgs(parsedProperties, getArgs(Entity), Entity);
+				output = this.makeEntity(Entity, rawData);
 
 				for (var x in parsedProperties) {
 					output[x] = parsedProperties[x];
