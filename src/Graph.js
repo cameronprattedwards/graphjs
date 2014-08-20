@@ -17,6 +17,8 @@
 			return new Date(Date.parse(rawData));
 		},
 		parseOther: function (Type, rawData) {
+			if (rawData == null || typeof rawData == "undefined")
+				return rawData;
 			return new Type(rawData).valueOf();
 		},
 		parseSchemedObject: function (Type, rawData) {
