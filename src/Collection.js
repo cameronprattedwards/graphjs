@@ -8,9 +8,9 @@
 }(this, function (Graph) {
 	return function Collection(Generic) {
 		return function(array) {
-			return array.map(function (entry) {
+			return array ? array.map(function (entry) {
 				return Graph.parse(Generic, entry);
-			});
+			}) : [];
 		}
 	};
 }));
