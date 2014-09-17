@@ -10,7 +10,8 @@
 		var output = new Entity();
 
 		for (var x in Entity.scheme) {
-			output[x] = null;
+			if (x !== "uniqKey")
+				output[x] = null;
 		}
 
 		return output;
