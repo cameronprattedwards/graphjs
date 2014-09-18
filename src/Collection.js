@@ -1,8 +1,8 @@
 (function (root, factory) {
 	if (typeof define == "function" && define.amd)
-		define(["graphjs/Graph"], factory);
+		define(["object-graph-js/Graph"], factory);
 	else if (typeof exports == "object")
-		module.exports = factory(require("graphjs/Graph"));
+		module.exports = factory(require("object-graph-js/Graph"));
 	else
 		root.Collection = factory(root.Graph);
 }(this, function (Graph) {

@@ -1,6 +1,6 @@
 {
   "name": "object-graph-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A teeny tiny library for parsing raw payloads into an object graph",
   "main": "Graph.js",
   "scripts": {
